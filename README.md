@@ -224,7 +224,7 @@ Example:
 
 ### Many timeouts or even BCM errors
 
-If you experience many GivTCP timeouts (can be seen in the addon log, or by large spikes in the "time since last update" stats entity, you inverter is probably overloaded. This has been observed in 3 phase hybrid inverters with a full load (6) batteries. This this case the load on the inverter must be reduced. 
+If you experience many GivTCP timeouts (can be seen in the addon log, or by large spikes in the "time since last update" stats entity, you inverter is probably overloaded. This has been observed in 3 phase hybrid inverters with a full load (6) batteries. This case the load on the inverter must be reduced. 
 
 There are several ways to do this.
 
@@ -253,6 +253,11 @@ Example:
 When you dont use the battery charging and discharging slots (you can do this in Home Assistant automations as well), are not using the battery and meter statistics, you can enable lite mode.
 
 Lite mode does fetch the battery SOC and the generic power and energy stats, so you can see what your battery is doing currently and how much energy went through it.
+
+Stats left out in lite mode:
+1. Meter details, MQTT devices for additional meter details are not created. Meter registered in other MQTT devices are still working (Energy and Power device)
+2. BCU and individual battery statistics. None of the MQTT battery devices are created.
+3. Charging slots. GivTCP registers charging slots in two locations. Older devices have only two slots, newer have more. The data block containing the newer additional charging slots is not fetched. You can only control two slots at most.
 
 Example:
 ```json
@@ -303,7 +308,7 @@ actions:
 mode: single
 ```
 
-If you want to use this automation, make sure to enter your own "last_uodate_time" entity and addon name. Best way to create this automation is in the visual editor of home assistant.
+If you want to use this automation, make sure to enter your own "last_update_time" entity and addon name. Best way to create this automation is in the visual editor of home assistant.
     
 
 
