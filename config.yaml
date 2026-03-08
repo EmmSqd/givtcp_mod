@@ -1,8 +1,8 @@
 name:  "GivTCP"
 description:  "TCP Modbus connection to MQTT/JSON for Givenergy Battery/PV Invertors"
 version:  "2.4.9"
-image: britkat/giv_tcp-ma
-slug:  "givtcp"
+image: EmmSqd/givtcp_mod
+slug:  "givtcp_mod"
 homeassistant_api: true
 hassio_api: true
 init:  true
@@ -12,7 +12,7 @@ services:
 map:
   - config:rw
 boot:  auto
-url:  https://github.com/britkat1980/giv_tcp
+url:  https://github.com/EmmSqd/giv_tcp_mod
 legacy:  true
 arch: 
   - aarch64
