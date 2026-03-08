@@ -1,4 +1,4 @@
-name:  "GivTCP"
+name:  "GivTCP-Mod"
 description:  "TCP Modbus connection to MQTT/JSON for Givenergy Battery/PV Invertors"
 version:  "3.5"
 slug:  "givtcp_mod"
